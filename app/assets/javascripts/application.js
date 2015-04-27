@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require angular
 //= require_tree .
+
+(function() {
+  angular.module('app', [])
+    .controller('MainController', MainController)
+    ;
+  MainController.$inject = ['$scope'];
+  function MainController($scope) {
+    $scope.corndog = 'Batter-fried meat stick!';
+  }
+})();
