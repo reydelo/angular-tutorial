@@ -19,16 +19,18 @@
   angular.module('app', [])
     .controller('MainController', MainController)
     ;
-  MainController.$inject = ['$scope'];
-  function MainController($scope) {
-    $scope.addFood = addFood;
-    $scope.foods = [
+  MainController.$inject = [];
+  function MainController() {
+    var vm = this;
+    vm.addFood = addFood;
+    vm.foods = [
       'Batter-fried meat tube!',
       'Burrito with bean and cheese deliciousness',
       'Noodly noodles with meatballs, marinara, and cheese'
     ];
     function addFood() {
-      $scope.foods.push($scope.newFood);
+      vm.foods.push(vm.newFood);
+      vm.newFood = '';
     }
   }
 })();
