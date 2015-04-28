@@ -21,10 +21,14 @@
     ;
   MainController.$inject = ['$scope'];
   function MainController($scope) {
+    $scope.addFood = addFood;
     $scope.foods = [
       'Batter-fried meat tube!',
       'Burrito with bean and cheese deliciousness',
       'Noodly noodles with meatballs, marinara, and cheese'
     ];
+    function addFood() {
+      $scope.foods.push($scope.newFood);
+    }
   }
 })();
